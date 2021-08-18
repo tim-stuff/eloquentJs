@@ -1,4 +1,3 @@
-
 let isEven = (n) => {
 	n = n > 0 ? n : -n;
 	if (!n) {
