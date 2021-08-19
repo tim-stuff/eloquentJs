@@ -1,17 +1,16 @@
-let theGridString = "";
-let theSize = 51;
-
-var isEven = (number) => number % 2 == 0;
+//var isEven = (number) => number % 2 == 0;
 
 var changeChar = (counter) => {
-	return ( isEven(counter) ? " " : "#" );
+	return counter % 2 == 0 ? " " : "#";
 }
 
-for (let i=0; i <= theSize; i++) {
-	for (let j=0; j <= theSize; j++) {
-		theGridString = theGridString + changeChar(j+i);
+var buildString = (boardSize) => {
+	let theGridString = "";
+	for (let i=0; i < boardSize; i++) {
+		for (let j=0; j < boardSize; j++) {
+			theGridString += changeChar(j+i);
+		}
+		theGridString += "\n";
 	}
-	theGridString = theGridString + "\n";
+	console.log(theGridString);
 }
-
-console.log(theGridString);
